@@ -1,7 +1,11 @@
 # Vertical Chart Test Task
 
 ## Demo
-https://github.com/user-attachments/assets/81101b59-2023-4d48-88fb-c891624f0117
+
+
+https://github.com/user-attachments/assets/f75f4bc1-8025-45f5-8bb5-9195d41d10e9
+
+
 
 
 Fullstack demo for a vertical metrics chart. The API returns time-series data
