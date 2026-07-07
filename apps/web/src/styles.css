@@ -1,0 +1,223 @@
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #171717;
+  background: #dcebf8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.page-shell {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 48px 24px;
+}
+
+.dashboard-card {
+  display: grid;
+  grid-template-columns: 64px auto;
+  width: fit-content;
+  max-width: 100%;
+  padding-bottom: 50px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #fbe8ed;
+  box-shadow: 0 24px 70px rgba(57, 82, 110, 0.18);
+  transition: background-color 180ms ease;
+}
+
+.dashboard-card:hover {
+  background: #f9dbe2;
+}
+
+.today-column {
+  display: grid;
+  grid-template-rows: 66px;
+  grid-auto-rows: 46px;
+  align-content: start;
+  justify-items: stretch;
+  padding-top: 26px;
+  color: #1c1c1c;
+  font-size: 24px;
+}
+
+.today-column strong,
+.today-column span {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  padding: 0 8px;
+  background: #f3f0f0;
+}
+
+.today-column span:nth-child(odd) {
+  background: transparent;
+}
+
+.today-column strong {
+  justify-items: center;
+  padding: 5px 8px;
+  border-bottom: 1px solid rgba(150, 132, 132, 0.3);
+  background: #ffffff;
+  font-size: 22px;
+  font-weight: 704;
+}
+
+.today-column span {
+  justify-items: end;
+  color: #555;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.chart-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 18px;
+  padding: 26px 42px 26px 48px;
+}
+
+.vertical-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+  color: #52464a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.vertical-picker select {
+  min-width: 148px;
+  padding: 7px 28px 7px 10px;
+  border: 1px solid rgba(130, 120, 120, 0.45);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #272326;
+  font: inherit;
+  cursor: pointer;
+}
+
+.vertical-picker select:focus {
+  outline: 2px solid rgba(47, 116, 232, 0.35);
+  outline-offset: 2px;
+}
+
+.chart-frame {
+  position: relative;
+  width: fit-content;
+  flex: 0 0 auto;
+  border: 2px solid rgba(150, 132, 132, 0.3);
+  background: transparent;
+}
+
+.chart-frame::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  content: "";
+}
+
+.vertical-chart {
+  width: 591px;
+  height: 295px;
+  cursor: default;
+}
+
+.chart-state {
+  display: grid;
+  place-items: center;
+  width: 591px;
+  height: 295px;
+  padding: 24px;
+  color: #52464a;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.chart-tooltip {
+  min-width: 220px;
+  color: #202025;
+  font-size: 24px;
+  line-height: 1.08;
+}
+
+.chart-tooltip__date {
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.chart-tooltip__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.chart-tooltip__dot {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  border-radius: 999px;
+}
+
+.chart-tooltip strong {
+  font-weight: 680;
+}
+
+@media (max-width: 760px) {
+  .page-shell {
+    padding: 24px 12px;
+  }
+
+  .dashboard-card {
+    grid-template-columns: 54px 1fr;
+  }
+
+  .today-column {
+    grid-auto-rows: 38px;
+    font-size: 18px;
+  }
+
+  .today-column strong {
+    font-size: 18px;
+  }
+
+  .chart-panel {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 18px 14px 18px 20px;
+  }
+
+  .vertical-picker {
+    justify-self: start;
+  }
+
+  .vertical-chart {
+    width: min(591px, 100%);
+    height: 295px;
+  }
+
+  .chart-state {
+    width: min(591px, 100%);
+    height: 295px;
+  }
+}

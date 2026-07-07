@@ -1,0 +1,23 @@
+{
+  "name": "chart-test-task",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.3.14",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "dev:api": "turbo dev --filter=@chart-task/api",
+    "dev:web": "turbo dev --filter=@chart-task/web"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "turbo": "2.10.2",
+    "typescript": "6.0.3"
+  }
+}
